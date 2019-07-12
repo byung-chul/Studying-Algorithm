@@ -1,2 +1,2 @@
-# myWorkspace
-연습용
+문제 출처
+https://codeup.kr/problemsetsol.php?psid=23
