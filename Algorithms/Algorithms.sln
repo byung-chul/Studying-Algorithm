@@ -17,6 +17,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "C++ STL sort", "C++ STL sor
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "C++ STL sort2", "C++ STL sort2\C++ STL sort2.vcxproj", "{287D8A80-FA17-4B88-A12A-E46C33E8808E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Heap Sort", "Heap Sort\Heap Sort.vcxproj", "{B72D854D-DA22-4B57-AAD8-0925E144D2CE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -81,6 +83,14 @@ Global
 		{287D8A80-FA17-4B88-A12A-E46C33E8808E}.Release|x64.Build.0 = Release|x64
 		{287D8A80-FA17-4B88-A12A-E46C33E8808E}.Release|x86.ActiveCfg = Release|Win32
 		{287D8A80-FA17-4B88-A12A-E46C33E8808E}.Release|x86.Build.0 = Release|Win32
+		{B72D854D-DA22-4B57-AAD8-0925E144D2CE}.Debug|x64.ActiveCfg = Debug|x64
+		{B72D854D-DA22-4B57-AAD8-0925E144D2CE}.Debug|x64.Build.0 = Debug|x64
+		{B72D854D-DA22-4B57-AAD8-0925E144D2CE}.Debug|x86.ActiveCfg = Debug|Win32
+		{B72D854D-DA22-4B57-AAD8-0925E144D2CE}.Debug|x86.Build.0 = Debug|Win32
+		{B72D854D-DA22-4B57-AAD8-0925E144D2CE}.Release|x64.ActiveCfg = Release|x64
+		{B72D854D-DA22-4B57-AAD8-0925E144D2CE}.Release|x64.Build.0 = Release|x64
+		{B72D854D-DA22-4B57-AAD8-0925E144D2CE}.Release|x86.ActiveCfg = Release|Win32
+		{B72D854D-DA22-4B57-AAD8-0925E144D2CE}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
