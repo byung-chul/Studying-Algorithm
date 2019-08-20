@@ -23,6 +23,7 @@ int findParent(int parent[], int a, int b) {
 	return 0;
 }
 int main() {
+
 	int parent[11];
 	for (int i = 0; i < 11; i++) {
 		parent[i] = i;
@@ -37,4 +38,5 @@ int main() {
 
 	cout << findParent(parent, 3, 2);
 	return 0;
+
 }
