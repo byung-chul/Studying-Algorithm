@@ -21,7 +21,7 @@ void dfs(int row, int col) {
 		nr = row + dx[i];
 		nc = col + dy[i];
 
-		if (nr < 0 && n <= nr && nc < 0 && n <= nc) {
+		if (nr < 0 || n <= nr || nc < 0 || n <= nc) {
 			continue;
 		}
 		if (map[nr][nc] > height) {
