@@ -22,7 +22,6 @@ void bfs(int i, int j) {
 	while (!q.empty()) {
 		i = q.front().first;
 		j = q.front().second;
-		cout << i << j << endl;
 		q.pop();
 
 		for (int i = 0; i < 4; i++) {
@@ -57,9 +56,9 @@ int main() {
 	for (int i = 0; i < N; i++) {
 		for (int j = 0; j < N; j++) {
 			if (!check[i][j] && map[i][j] == '1') {
-				group_id++;
+				
 				bfs(i, j);
-
+				group_id++;
 			}
 		}
 	}
