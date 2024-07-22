@@ -13,13 +13,13 @@ class Solution {
             }
             sb.append(Character.toString((char) ('a' + i)));
         }
-        String[] sa = sb.toString().split("");
-        Arrays.sort(sa);
+        //String[] sa = sb.toString().split("");
+        //Arrays.sort(sa);
         
-        sb.setLength(0);
-        for (String split_s : sa) {
-            sb.append(split_s);
-        }
+        //sb.setLength(0);
+        //for (String split_s : sa) {
+        //    sb.append(split_s);
+        //}
         return sb.toString();
     }
 }
