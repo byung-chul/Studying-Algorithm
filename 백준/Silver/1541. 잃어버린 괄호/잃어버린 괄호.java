@@ -1,34 +1,25 @@
-import java.util.Scanner;
-import java.util.StringTokenizer;
- 
+import java.io.*;
+
 public class Main {
- 
-	public static void main(String[] args) {
- 
-		Scanner in = new Scanner(System.in);
- 
-		int sum = Integer.MAX_VALUE;	// 초기 상태 여부 확인을 위한 값으로 설정 
-		StringTokenizer subtraction = new StringTokenizer(in.nextLine(), "-");
- 
-		while (subtraction.hasMoreTokens()) {
-			int temp = 0;
- 
-			// 뺄셈으로 나뉜 토큰을 덧셈으로 분리하여 해당 토큰들을 더한다.
-			StringTokenizer addition = new StringTokenizer(subtraction.nextToken(), "+");
-			
-			// 덧셈으로 나뉜 토큰들을 모두 더한다. 
-			while (addition.hasMoreTokens()) {
-				temp += Integer.parseInt(addition.nextToken());
-			}
-			
-			// 첫 번째토큰인 경우 temp값이 첫 번째 수가 됨
-			if (sum == Integer.MAX_VALUE) {
-				sum = temp;
-			} else {
-				sum -= temp;
-			}
-		}
-		System.out.println(sum);
-	}
- 
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String S = br.readLine();
+        String[] split_by_minus = S.split("-");
+        int total = 0;
+        for (int i = 0; i < split_by_minus.length; i++) {
+            int sub_total = 0;
+            String[] split_by_plus = split_by_minus[i].split("\\+");
+            for (String sub : split_by_plus) {
+                sub_total += Integer.parseInt(sub);
+            }
+            if (i == 0) {
+                total += sub_total;
+            } else {
+                total -= sub_total;
+            }
+        }
+
+        System.out.println(total);
+    }
 }
