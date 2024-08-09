@@ -1,7 +1,8 @@
 import java.io.*;
-import java.util.*;
+import java.util.Arrays;
+import java.util.StringTokenizer;
 
-class Conference implements Comparable<Conference> {
+class Conference {
     int start;
     int end;
 
@@ -9,37 +10,38 @@ class Conference implements Comparable<Conference> {
         this.start = start;
         this.end = end;
     }
-
-    @Override
-    public int compareTo(Conference a) {
-        if (this.end == a.end) {
-            return this.start - a.start;
-        }
-        return this.end - a.end;
-    }
 }
 
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int confernceCount = Integer.parseInt(br.readLine());
-        StringTokenizer st;
-        List<Conference> cList = new ArrayList<>();
-        for (int i = 0; i < confernceCount; i++) {
-            st = new StringTokenizer(br.readLine(), " ");
-            cList.add(new Conference(Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken())));
+        int conferenceCount = Integer.parseInt(br.readLine());
+        Conference[] conferences = new Conference[conferenceCount];
+
+        for (int i = 0; i < conferenceCount; i++) {
+            StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+            int start = Integer.parseInt(st.nextToken());
+            int end = Integer.parseInt(st.nextToken());
+            conferences[i] = new Conference(start, end);
         }
 
-        Collections.sort(cList);
+        Arrays.sort(conferences, (a, b) -> {
+            if (a.end == b.end) {
+                return Integer.compare(a.start, b.start);
+            }
+            return Integer.compare(a.end, b.end);
+        });
 
         int count = 0;
-        int current = 0;
-        for (Conference c : cList) {
-            if (c.start >= current) {
+        int currentEndTime = 0;
+        
+        for (Conference c : conferences) {
+            if (c.start >= currentEndTime) {
                 count++;
-                current = c.end;
+                currentEndTime = c.end;
             }
         }
+
         System.out.println(count);
     }
 }
