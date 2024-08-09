@@ -15,12 +15,10 @@ public class Main {
         int count = 0;
 
         for (int i = kindOfMoney - 1; i >= 0; i--) {
+            count += total / money.get(i);
+            total = total % money.get(i);
             if (total == 0) {
                 break;
-            }
-            while (total - money.get(i) >= 0) {
-                total -= money.get(i);
-                count++;
             }
         }
         System.out.println(count);
