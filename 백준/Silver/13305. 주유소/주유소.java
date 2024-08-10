@@ -2,10 +2,10 @@ import java.io.*;
 import java.util.*;
 
 class City {
-    int oilCost;
-    int distanceToNext;
+    long oilCost;
+    long distanceToNext;
 
-    public City(int oilCost, int distanceToNext) {
+    public City(long oilCost, long distanceToNext) {
         this.oilCost = oilCost;
         this.distanceToNext = distanceToNext;
     }
@@ -22,12 +22,12 @@ public class Main {
         for (int i = 0; i < cityCount; i++) {
             if (i != cityCount - 1) {
                 cities.add(
-                        new City(Integer.parseInt(costToken.nextToken()), Integer.parseInt(distanceToken.nextToken())));
+                        new City(Long.parseLong(costToken.nextToken()), Long.parseLong(distanceToken.nextToken())));
             }
         }
 
-        int minPrice = Integer.MAX_VALUE;
-        int total = 0;
+        long minPrice = Integer.MAX_VALUE;
+        long total = 0;
         for (int i = 0; i < cityCount - 1; i++) {
             if (minPrice > cities.get(i).oilCost) {
                 minPrice = cities.get(i).oilCost;
